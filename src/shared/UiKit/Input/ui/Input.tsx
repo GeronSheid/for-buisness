@@ -1,5 +1,11 @@
-export const Input = () => {
+import styles from './Input.module.scss';
+
+export const Input = ({value, ...props} : any) => {
   return (
-    <div>Input</div>
+    <>
+      <div className={styles.inputWrapp}>
+        <input type="text" placeholder={props.placeholder} value={value}/>
+      </div>
+    </>
   )
 }

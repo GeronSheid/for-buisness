@@ -1,0 +1,24 @@
+.inputWrapp {
+    max-width: 500px;
+    padding: 10px 20px;
+    border: 1px solid #333;
+    border-radius: 25px;
+    & > input {
+        width: 100%;
+        font-size: 1;
+
+        border: none;
+        outline: none;
+        &::placeholder {
+            color: #333;
+        }
+    }
+}
+
+@media (any-hover: hover) {
+    .inputWrapp {
+        &:hover {
+            border-color: green;
+        }
+    }
+}
