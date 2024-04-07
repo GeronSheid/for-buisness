@@ -5,7 +5,7 @@ export const Input: React.FC<InputProps> = ({value, onChange, ...props}) => {
   return (
     <>
       <div className={styles.inputWrapp}>
-        <input type="text" placeholder={props.placeholder} value={value} onChange={onChange}/>
+        <input data-testid='inputElement' type="text" placeholder={props.placeholder} value={value} onChange={onChange}/>
       </div>
     </>
   )
