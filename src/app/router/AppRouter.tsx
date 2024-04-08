@@ -6,28 +6,40 @@ import { AuthPage } from '../../pages/AuthPage'
 export const AppRouter = () => {
 
     interface IRoute {
-        path: string,
-        element: JSX.Element
+        path: string;
+        element: JSX.Element;
+        suspenseElement?: JSX.Element;
     }
 
-    
+    const privateRoutes: IRoute[] = [
+        { path: '/', element: <MainPage /> },
+    ]
 
     const routes: IRoute[] = [
-        {path: '/', element: <MainPage/>},
-        {path: '/auth', element: <AuthPage/>}
+        { path: '/auth', element: <AuthPage /> }
     ]
 
     return (
         <Routes>
-            {routes.map(route => 
-                (<Route 
-                    key={route.path} 
-                    path={route.path} 
-                    element={
-                        <Suspense fallback={'Идёт загрузка...'}>
-                            {route.element}
-                        </Suspense>
-                    }/>)
+            {routes.map(route =>
+            (<Route
+                key={route.path}
+                path={route.path}
+                element={
+                    <Suspense fallback={'Идёт загрузка...'}>
+                        {route.element}
+                    </Suspense>
+                } />)
+            )}
+            {privateRoutes.map(route =>
+            (<Route
+                key={route.path}
+                path={route.path}
+                element={
+                    <Suspense fallback={'Идёт загрузка...'}>
+                        {route.element}
+                    </Suspense>
+                } />)
             )}
         </Routes>
     )
