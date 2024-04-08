@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router-dom'
 import { MainPage } from '../../pages/MainPage'
 import { Suspense } from 'react'
 import { AuthPage } from '../../pages/AuthPage'
+import { AuthRequired } from '../../shared/utils/hoc/AuthRequired'
 
 export const AppRouter = () => {
 
@@ -37,7 +38,7 @@ export const AppRouter = () => {
                 path={route.path}
                 element={
                     <Suspense fallback={'Идёт загрузка...'}>
-                        {route.element}
+                        <AuthRequired>{route.element}</AuthRequired>
                     </Suspense>
                 } />)
             )}
