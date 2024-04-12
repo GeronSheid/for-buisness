@@ -1,11 +1,15 @@
-import { InputProps } from '../model/InputType';
+import { InputProps } from '../types/InputType';
 import styles from './Input.module.scss';
 
 export const Input: React.FC<InputProps> = ({value, onChange, ...props}) => {
   return (
     <>
       <div className={styles.inputWrapp}>
-        <input data-testid='inputElement' type="text" placeholder={props.placeholder} value={value} onChange={onChange}/>
+        <input
+          type="text" 
+          placeholder={props.placeholder} 
+          value={value} 
+          onChange={onChange}/>
       </div>
     </>
   )
