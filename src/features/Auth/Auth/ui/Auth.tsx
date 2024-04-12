@@ -3,6 +3,7 @@ import Input from '../../../../shared/UiKit/Input';
 import styles from './Auth.module.scss';
 
 import type { IAuthForm } from '../types/AuthTypes';
+import { Button } from '../../../../shared/UiKit/Button';
 
 
 export const Auth = () => {
@@ -26,15 +27,21 @@ export const Auth = () => {
         <label>Авторизация</label>
         <Controller
             name='login'
+            rules={
+                {required: true}
+            }
             control={control}
             render={({field}) => <Input {...field} placeholder='Введите логин'/>}
         />
         <Controller
             name='password'
+            rules={
+                {required: true}
+            }
             control={control}
             render={({field}) => <Input {...field} placeholder='Введите пароль'/>}
         />
-        <input type="submit"/>
+        <Button type='btn'>Войти</Button>
     </form>
   )
 }
