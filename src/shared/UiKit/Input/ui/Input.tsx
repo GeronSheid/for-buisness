@@ -1,11 +1,12 @@
-import React from 'react';
+import {forwardRef} from 'react';
 import { InputProps } from '../types/InputType';
 import styles from './Input.module.scss';
 
-export const Input: React.FC<InputProps> = React.forwardRef(({value, onChange, ...props}, ref) => {
+export const Input = forwardRef<HTMLInputElement, InputProps>(({value, onChange, ...props}, ref) => {
   return (
       <div className={styles.inputWrapp}>
         <input
+          ref={ref}
           type="text" 
           placeholder={props.placeholder} 
           value={value} 
