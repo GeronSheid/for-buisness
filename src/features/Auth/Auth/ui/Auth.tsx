@@ -5,7 +5,6 @@ import styles from './Auth.module.scss';
 import type { IAuthForm } from '../types/AuthTypes';
 import { Button } from '../../../../shared/UiKit/Button';
 
-
 export const Auth = () => {
 
     const {control, handleSubmit} = useForm({
@@ -18,6 +17,8 @@ export const Auth = () => {
     const onSubmit: SubmitHandler<IAuthForm> = (data) => {
         console.log(data)
     }
+
+
 
   return (
     <form
