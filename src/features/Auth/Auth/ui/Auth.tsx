@@ -7,7 +7,7 @@ import { Button } from '../../../../shared/UiKit/Button';
 
 export const Auth = () => {
 
-    const {control, handleSubmit} = useForm({
+    const {control, handleSubmit, formState: { errors }} = useForm({
         defaultValues: {
             login: '',
             password: '',
@@ -29,20 +29,26 @@ export const Auth = () => {
         <Controller
             name='login'
             rules={
-                {required: true}
+                {required: 'Введите логин'}
             }
             control={control}
-            render={({field}) => <Input {...field} placeholder='Введите логин'/>}
+            render={({field}) => <Input {...field} placeholder='Введите логин' message={errors.login?.message}/>}
         />
         <Controller
             name='password'
-            rules={
-                {required: true}
-            }
+            rules={{
+                required: 'Введите пароль',
+                minLength: {
+                    value: 4,
+                    message: 'Пароль должен быть больше 4 символов'
+                }
+            }}
             control={control}
-            render={({field}) => <Input {...field} placeholder='Введите пароль'/>}
+            render={({field}) => <Input {...field} placeholder='Введите пароль' message={errors.password?.message}/>}
         />
-        <Button type='btn'>Войти</Button>
+        <div className={styles.btn}>
+            <Button type='btn'>Войти</Button>
+        </div>
     </form>
   )
 }
