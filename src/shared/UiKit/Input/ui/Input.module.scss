@@ -1,3 +1,5 @@
+@import '../../../../app/styles/_variables';
+
 .inputWrapp {
     position: relative;
     width: 100%;
@@ -41,5 +43,11 @@
                 color: green;
             }
         }
+    }
+}
+
+@media (min-width: $tablet) {
+    .inputWrapp {
+        max-width: $tablet;
     }
 }

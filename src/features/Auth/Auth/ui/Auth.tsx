@@ -24,8 +24,6 @@ export const Auth = () => {
         console.log(data)
     }
 
-
-
     return (
         <form
             className={styles.form}

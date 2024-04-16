@@ -1,5 +1,6 @@
 @import 'normalize';
 @import 'reset';
+@import 'variables';
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -30,9 +31,25 @@ body {
 
 .container {
   height: 100dvh;
+  width: 100%;
   min-width: 320px;
-  max-width: 500px;
+  max-width: $tablet;
   margin: 0 auto;
   padding: 0 10px;
   background-color: #333;
+}
+
+@media (min-width: $tablet) {
+  .container {
+    max-width: 1024px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    align-items: center;
+  }
+}
+
+@media (min-width: $desktop) {
+  .container {
+    max-width: 100%;
+  }
 }
