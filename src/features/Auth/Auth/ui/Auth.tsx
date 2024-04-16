@@ -4,9 +4,10 @@ import styles from './Auth.module.scss';
 
 import type { IAuthForm } from '../types/AuthTypes';
 import { Button } from '../../../../shared/UiKit/Button';
+import { useAuth } from '../../../../entities/viewer/model/selectors';
 
 export const Auth = () => {
-
+    const isAuth = useAuth();
     const {
         control,
         handleSubmit,
@@ -22,8 +23,9 @@ export const Auth = () => {
 
     const onSubmit: SubmitHandler<IAuthForm> = (data) => {
         console.log(data)
+        console.log(isAuth)
     }
-
+    
     return (
         <form
             className={styles.form}

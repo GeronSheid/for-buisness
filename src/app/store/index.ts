@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-import authReducer from './authSlice';
+import {viewerReducer} from '../../entities/viewer';
 
 
 const store = configureStore({
     reducer: {
-        auth: authReducer,
+        auth: viewerReducer,
     },
 })
 

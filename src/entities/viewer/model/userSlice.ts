@@ -1,10 +1,10 @@
 import { createSlice} from "@reduxjs/toolkit";
 
-type isAuth = {
+type IViewer = {
     isAuth: boolean;
 } 
 
-const initialState: isAuth = {
+const initialState: IViewer = {
     isAuth: false,
 }
 
