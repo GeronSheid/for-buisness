@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import {viewerReducer} from '../../entities/viewer';
+import {viewerReducer} from '../../../entities/viewer';
 
 
 const store = configureStore({

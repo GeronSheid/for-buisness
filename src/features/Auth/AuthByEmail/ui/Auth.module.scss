@@ -1,0 +1,17 @@
+@import '../../../../app/styles/variables';
+
+.form {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    
+    margin-bottom: 25px;
+}
