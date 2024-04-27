@@ -1,10 +1,16 @@
 import { createSlice} from "@reduxjs/toolkit";
 
 type IViewer = {
+    name: string;
+    surName: string;
+    email: string;
     isAuth: boolean;
 } 
 
 const initialState: IViewer = {
+    name: '',
+    surName: '',
+    email: '',
     isAuth: false,
 }
 
