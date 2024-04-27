@@ -1,10 +1,12 @@
 import { configureStore } from "@reduxjs/toolkit";
 import {viewerReducer} from '../../../entities/users/viewer';
+import { projectReducer } from "../../../entities/project";
 
 
 const store = configureStore({
     reducer: {
         auth: viewerReducer,
+        project: projectReducer
     },
 })
 

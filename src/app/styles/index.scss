@@ -30,7 +30,6 @@ body {
 }
 
 .container {
-  height: 100dvh;
   width: 100%;
   min-width: 320px;
   max-width: $tablet;
@@ -41,6 +40,7 @@ body {
 
 @media (min-width: $tablet) {
   .container {
+    height: 100%;
     max-width: 1024px;
     display: grid;
     grid-template-columns: repeat(12, 1fr);

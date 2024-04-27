@@ -1,15 +1,13 @@
-import { IProject } from "../../../entities/project/types/projectTypes"
-import { CardsList } from "../../../entities/project/ui/CardsList/CardsList"
-
-const list: IProject[] = [{id: 'id1', name: 'Бизнес приложуха', description: 'Верняк тема', profit: 1000, expectedProfit: 10000}]
+import { CardsList } from "../../../entities/project/ui/CardsList/CardsList";
+import { useAppSelector } from "../../../shared/utils/hooks/reduxHooks";
 
 function MainPage() {
+  const list = useAppSelector(state => state.project.projectsList);
   return (
-    <div className="container">
-        <h1>Главная</h1>
+    <div className="container"> 
         <CardsList projectsList={list} />
     </div>
   )
 }
 
-export default MainPage
+export default MainPage;
