@@ -41,9 +41,9 @@
     }
 
     &:focus {
-        color: green;
+        color: #fff;
         &::before {
-            background-color: green;
+            background-color: #fff;
         }
     }
 
