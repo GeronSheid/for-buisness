@@ -1,6 +1,6 @@
 import React from "react";
 import { Navigate, useLocation } from "react-router-dom";
-import { useAuth } from "../../../entities/viewer/model/selectors";
+import { viewerSelectors } from "../../../entities/users/viewer";
 
 
 interface IAuthRequired {
@@ -10,7 +10,7 @@ interface IAuthRequired {
 export const AuthRequired: React.FC<IAuthRequired> = ({ children }) => {
 
     const location = useLocation();
-    const isAuth = useAuth();
+    const isAuth = viewerSelectors.useAuth();
 
     if (!isAuth) {
         return <Navigate to={'/auth'} state={{ from: location }} />

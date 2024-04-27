@@ -3,6 +3,7 @@ import { MainPage } from '../../../pages/MainPage'
 import { Suspense } from 'react'
 import { AuthPage } from '../../../pages/AuthPage'
 import { AuthRequired } from '../../../shared/utils/hoc/AuthRequired'
+import { ProfilePage } from '../../../pages/ProfilePage'
 
 export const AppRouter = () => {
 
@@ -13,11 +14,12 @@ export const AppRouter = () => {
     }
 
     const privateRoutes: IRoute[] = [
-        { path: '/', element: <MainPage /> },
+        { path: '/profile', element: <ProfilePage /> }
     ]
 
     const routes: IRoute[] = [
-        { path: '/auth', element: <AuthPage /> }
+        { path: '/auth', element: <AuthPage /> },
+        { path: '/', element: <MainPage /> }
     ]
 
     return (

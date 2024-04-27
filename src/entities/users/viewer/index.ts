@@ -5,5 +5,5 @@ import  { authorize  as viewerAuthorize } from './model/userSlice';
 export {
     viewerAuthorize,
     viewerSelectors,
-    viewerReducer 
+    viewerReducer
 };
