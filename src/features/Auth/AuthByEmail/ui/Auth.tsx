@@ -31,7 +31,6 @@ export const Auth = () => {
             className={styles.form}
             onSubmit={handleSubmit(onSubmit)}
         >
-            <label>Авторизация</label>
             <Controller
                 name='login'
                 rules={
